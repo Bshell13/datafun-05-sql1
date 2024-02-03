@@ -28,3 +28,13 @@ CREATE TABLE books (
     author_id TEXT,
     FOREIGN KEY (author_id) REFERENCES authors(author_id)
 );
+
+-- Insert  a single author
+Insert into authors (name) values ("John Doe");
+
+-- Insert multiple authors in a single statement
+insert into authors (name) values ("Alice Smith"), ("Bob Johnson"), ("Eva Brown");
+
+-- Insert an author and retrieve the auto-generated ID (SQLite specific)
+insert into authors (name) values ("Jane Green");
+Select last_insert_rowid();
